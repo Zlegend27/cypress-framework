@@ -4,7 +4,7 @@ describe("Assertions", () => {
 
     beforeEach(() => {
         // This will fail if the page doesnt send 
-        cy.visit("https://techglobal-training.com/frontend/");
+        cy.visit(`${Cypress.env('SITE_URL')}/frontend`);
         cy.get(".cards").contains("Html Elements").click();
     });
 
