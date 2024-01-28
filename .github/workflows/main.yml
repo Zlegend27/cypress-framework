@@ -10,3 +10,8 @@ jobs:
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v6
+        with: 
+          # browser: chrome
+          # headless: true
+          # spec: cypress\e2e\Projects\1-form-elements-project.cy.js
+          command: npm run test:chrome
