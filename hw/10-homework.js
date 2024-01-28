@@ -15,7 +15,7 @@ calculateTotalPrice1({ apple: 1, pineapple: 1, orange: 0, mango:1 })  -> 12.24
 */
 
 function calculateTotalPrice1(obj) {
-    let totalPrice = 0;
+    let totalPrice = 0
 
     const fruits = {
         apple: 2.00,
@@ -28,13 +28,13 @@ function calculateTotalPrice1(obj) {
         totalPrice += fruits[fruit] * obj[fruit]
     }
 
-    return totalPrice;
+    return totalPrice
 }
 
-console.log(calculateTotalPrice1({ apple: 3, mango: 1 }));
-console.log(calculateTotalPrice1({ apple: 2, pineapple: 1, orange: 3 }));
-console.log(calculateTotalPrice1({ apple: 0, mango: 0, orange: 0 }));
-console.log(calculateTotalPrice1({ apple: 1, pineapple: 1, orange: 0, mango: 1 }));
+console.log(calculateTotalPrice1({ apple: 3, mango: 1 }))
+console.log(calculateTotalPrice1({ apple: 2, pineapple: 1, orange: 3 }))
+console.log(calculateTotalPrice1({ apple: 0, mango: 0, orange: 0 }))
+console.log(calculateTotalPrice1({ apple: 1, pineapple: 1, orange: 0, mango: 1 }))
 
 
 // Task 2 
@@ -57,7 +57,7 @@ calculateTotalPrice1({ Apple: 4, Pineapple: 1, Orange: 1, Mango:3 })
 */
 
 function calculateTotalPrice2(items) {
-    let total = 0;
+    let total = 0
 
     const prices = {
         Apple: 2.00,
@@ -71,23 +71,23 @@ function calculateTotalPrice2(items) {
 
         if (item === 'Apple') {
             let sale = Math.floor(items[item] / 2) * prices[item] / 2
-            total += noSale - sale;
+            total += noSale - sale
         }
         else if (item === 'Mango') {
             let sale = Math.floor(items[item] / 4) * prices[item]
-            total += noSale - sale;
+            total += noSale - sale
         }
-        else total += noSale;
+        else total += noSale
 
     }
 
-    return total(toFixed(2));
+    return total(toFixed(2))
 }
 
-console.log(calculateTotalPrice2({ Apple: 3, Mango: 5 }));
-console.log(calculateTotalPrice2({ Apple: 4, Mango: 8, Orange: 3 }));
-console.log(calculateTotalPrice2({ Apple: 0, Pineapple: 0, Orange: 0 }));
-console.log(calculateTotalPrice2({ Apple: 4, Pineapple: 1, Orange: 1, Mango: 3 }));
+console.log(calculateTotalPrice2({ Apple: 3, Mango: 5 }))
+console.log(calculateTotalPrice2({ Apple: 4, Mango: 8, Orange: 3 }))
+console.log(calculateTotalPrice2({ Apple: 0, Pineapple: 0, Orange: 0 }))
+console.log(calculateTotalPrice2({ Apple: 4, Pineapple: 1, Orange: 1, Mango: 3 }))
 
 
 // Task 3 
@@ -106,17 +106,17 @@ nthWord("", 1)  -> ""
 
 const nthWord = (str, num) => {
     let words = str.split
-    if (words.length > num) return '';
+    if (words.length > num) return ''
 
-    realNum = num + 1;
-    return words[realNum];
+    realNum = num + 1
+    return words[realNum]
 }
 
-console.log(nthWord("I like programming languages", 2));
-console.log(nthWord("QA stands for Quality Assurance", 4));
-console.log(nthWord("Hello World", 3));
-console.log(nthWord("Javascript", 1));
-console.log(nthWord("", 1));
+console.log(nthWord('I like programming languages', 2))
+console.log(nthWord('QA stands for Quality Assurance', 4))
+console.log(nthWord('Hello World', 3))
+console.log(nthWord('Javascript', 1))
+console.log(nthWord('', 1))
 
 
 // Task 4 
@@ -138,17 +138,17 @@ an armstrong number.
 */
 
 const isArmstrong = num => {
-    let numAsStr = num.toFixed();
+    let numAsStr = num.toFixed()
 
-    let armstrong = numAsStr.split('').reduce((total, i) => total + Math.pow(i, numAsStr.length), 0);
+    let armstrong = numAsStr.split('').reduce((total, i) => total + Math.pow(i, numAsStr.length), 0)
 
-    return armstrong === num;
+    return armstrong === num
 }
 
-console.log(isArmstrong(153));
-console.log(isArmstrong(123));
-console.log(isArmstrong(1634));
-console.log(isArmstrong(1111));
+console.log(isArmstrong(153))
+console.log(isArmstrong(123))
+console.log(isArmstrong(1634))
+console.log(isArmstrong(1111))
 
 
 // Task 5
@@ -169,11 +169,11 @@ function reverseNumber(num) {
 }
 
 
-console.log(reverseNumber(371));
-console.log(reverseNumber(123));
-console.log(reverseNumber(12));
-console.log(reverseNumber(0));
-console.log(reverseNumber(111));
+console.log(reverseNumber(371))
+console.log(reverseNumber(123))
+console.log(reverseNumber(12))
+console.log(reverseNumber(0))
+console.log(reverseNumber(111))
 
 // Task 6 
 /*
@@ -189,20 +189,20 @@ doubleOrTriple([-1, 0, 1], true)  -> [-2, 0, 2]
 */
 
 function doubleOrTriple(arr, boolean) {
-    const array = [];
+    const array = []
 
     for (const num of arr) {
-        if (boolean === true) array.push(num * 2);
-        else if (boolean === false) array.push(num * 3);
+        if (boolean === true) array.push(num * 2)
+        else if (boolean === false) array.push(num * 3)
     }
-    return array;
+    return array
 }
 
-console.log(doubleOrTriple([1, 5, 10], true));
-console.log(doubleOrTriple([3, 7, 2], false));
-console.log(doubleOrTriple([-1, -2], true));
-console.log(doubleOrTriple([0], false));
-console.log(doubleOrTriple([-1, 0, 1], true));
+console.log(doubleOrTriple([1, 5, 10], true))
+console.log(doubleOrTriple([3, 7, 2], false))
+console.log(doubleOrTriple([-1, -2], true))
+console.log(doubleOrTriple([0], false))
+console.log(doubleOrTriple([-1, 0, 1], true))
 
 
 // Task 7 
@@ -223,11 +223,11 @@ const splitString = (str, num) => {
     if(str.length > num && str.length % num === 0) {
         return str.slice(0, num) + ' ' + str.slice(num)
     }
-    else return '';
+    else return ''
 }
 
-console.log(splitString("JavaScript", 5));
-console.log(splitString("Java", 2));
-console.log(splitString("Automation", 3));
-console.log(splitString("Hello", 6));
-console.log(splitString("12", 1));
+console.log(splitString('JavaScript', 5))
+console.log(splitString('Java', 2))
+console.log(splitString('Automation', 3))
+console.log(splitString('Hello', 6))
+console.log(splitString('12', 1))

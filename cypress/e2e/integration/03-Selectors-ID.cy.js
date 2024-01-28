@@ -14,7 +14,7 @@ describe('Selector | ID', () => {
     it('Validate Html Elements Heading', () => {
         cy.visit('https://techglobal-training.com/frontend')
         cy.get('#card-1').click()
-        cy.get('#main_heading').should('have.text', 'Html Elements');
+        cy.get('#main_heading').should('have.text', 'Html Elements')
     })
 
     it('Validate ID Locators', () => {

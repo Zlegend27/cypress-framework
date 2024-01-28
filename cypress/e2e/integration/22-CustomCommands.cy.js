@@ -1,13 +1,13 @@
 /// <reference types="cypress"/>
 
-describe("Custom Commands", () => {
+describe('Custom Commands', () => {
 
     beforeEach(() => {
-      cy.visit(`${Cypress.env('SITE_URL')}/frontend`);
-      cy.clickCard("Html Elements");
-    });
+      cy.visit(`${Cypress.env('SITE_URL')}/frontend`)
+      cy.clickCard('Html Elements')
+    })
     
-    it("Parent Commands", () => {
+    it('Parent Commands', () => {
         
         /* 
         
@@ -41,7 +41,7 @@ describe("Custom Commands", () => {
         cy.selectDropdownOption('#company_dropdown2', 'Microsoft')
 
         cy.login('Tech', 'Global')
-    });
+    })
 
     it('Child Command', () => {
 
@@ -53,6 +53,6 @@ describe("Custom Commands", () => {
 
         cy.get('#main_heading').logText()
 
-        cy.get('#main_heading').assertAttribute('id', 'main_heading')
+        cy.get('#main_heading').assertAttribute('id', 'main_heading1')
     })
-  });
+  })

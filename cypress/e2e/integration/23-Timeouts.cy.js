@@ -1,12 +1,12 @@
 /// <reference types="cypress"/>
 
-describe("Timeouts", () => {
+describe('Timeouts', () => {
     beforeEach(() => {
-      cy.visit(`${Cypress.env("SITE_URL")}/frontend`, { timeout: 100000 });
-      cy.clickCard("Html Elements");
-    });
+      cy.visit(`${Cypress.env('SITE_URL')}/frontend`, { timeout: 100000 })
+      cy.clickCard('Html Elements')
+    })
   
-    it("Explicit and Inline Timeouts", () => {
+    it('Explicit and Inline Timeouts', () => {
   
       cy.get('#main_heading', { timeout: 10000 })
   
@@ -23,10 +23,10 @@ describe("Timeouts", () => {
      */
   
     it('Waits Page Test', () => {
-      cy.visit(`${Cypress.env("SITE_URL")}/frontend`, { timeout: 100000 });
-      cy.clickCard("Waits");
+      cy.visit(`${Cypress.env('SITE_URL')}/frontend`, { timeout: 100000 })
+      cy.clickCard('Waits')
       cy.get('#red').click()
       cy.get('.box', { timeout: 10000}).should('be.visible')
     
     })
-  });
+  })

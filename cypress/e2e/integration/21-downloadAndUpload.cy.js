@@ -1,20 +1,20 @@
 /// <reference types="cypress"/>
 
 
-describe("File Upload & File Download", () => {
+describe('File Upload & File Download', () => {
     beforeEach(() => {
       // This will fail if the page doesn't send text/html with 200 status
-      cy.visit(`${Cypress.env("SITE_URL")}/frontend`);
-      cy.clickCard("File Download & Upload");
-    });
+      cy.visit(`${Cypress.env('SITE_URL')}/frontend`)
+      cy.clickCard('File Download & Upload')
+    })
 
     let fileName = 'SampleText.txt'
   
-    it("File Download", () => {
+    it('File Download', () => {
       cy.get('#file_download').click()
   
       cy.readFile(`cypress/downloads/${fileName}`)
-    });
+    })
 
     it('File Upload', () => {
 
@@ -52,4 +52,4 @@ describe("File Upload & File Download", () => {
 
     cy.get('.is-success').should('have.text', `You uploaded ${fileName}`)
   })
-  });
+  })

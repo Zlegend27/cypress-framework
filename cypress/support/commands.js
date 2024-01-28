@@ -13,8 +13,8 @@
 // Cypress.Commands.add('login', (email, password) => { ... })
 //
 
-    Cypress.Commands.add("clickCard", (link) => {
-        cy.get(".cards").contains(link).click();
+    Cypress.Commands.add('clickCard', (link) => {
+        cy.get('.cards').contains(link).click()
     })
 
     Cypress.Commands.add('selectDropdownOption', ($el, value) => {

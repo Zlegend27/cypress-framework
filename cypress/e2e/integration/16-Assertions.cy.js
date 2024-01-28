@@ -1,14 +1,14 @@
 /// <reference types="cypress"/>
 
-describe("Assertions", () => {
+describe('Assertions', () => {
 
     beforeEach(() => {
         // This will fail if the page doesnt send 
-        cy.visit(`${Cypress.env('SITE_URL')}/frontend`);
-        cy.get(".cards").contains("Html Elements").click();
-    });
+        cy.visit(`${Cypress.env('SITE_URL')}/frontend`)
+        cy.get('.cards').contains('Html Elements').click()
+    })
 
-    it("Default Assertions", () => {
+    it('Default Assertions', () => {
         cy
             // there is a defualt assertion that thi
             // button must exist in the DOM before processing
@@ -26,7 +26,7 @@ describe("Assertions", () => {
         cy.get('#date_input2').click()
 
         cy.get('#text_input1').type('TechGlobal')
-    });
+    })
 
     it('Implicit Assertions', () => {
 

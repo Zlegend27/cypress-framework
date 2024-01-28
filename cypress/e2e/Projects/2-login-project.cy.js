@@ -96,7 +96,7 @@ describe('login project', () => {
         cy.get('#email').should('be.visible')
 
         // Validate that the label of the email input box is “Enter your email address and we'll send you a link to reset your password.”  --->   ✓
-        cy.get(':nth-child(1) > label').should('have.text', "Enter your email address and we'll send you a link to reset your password. ")
+        cy.get(':nth-child(1) > label').should('have.text', 'Enter your email address and we\'ll send you a link to reset your password. ')
 
         // Validate the “SUBMIT” button is displayed  --->   ✓
         // Validate the “SUBMIT” button is clickable  --->   ✓
@@ -180,7 +180,7 @@ describe('login project', () => {
     })
 
     // Task 10 
-    it.only('Test Case 10 - Validate the invalid login with the wrong username and password', () => {
+    it('Test Case 10 - Validate the invalid login with the wrong username and password', () => {
         const loginInfo = ['John', '1234']
 
         // Enter the username as “John”  --->   ✓
