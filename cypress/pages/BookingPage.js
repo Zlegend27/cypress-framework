@@ -12,15 +12,23 @@ class Booking extends BasePage {
     }
 
     getBookButton() {
-        return cy.get('button[type]')
+        return cy.get('.null')
     }
 
     getDropDown() {
         return cy.get('.select > select')
     }
 
-    getDatePickers(){
+    getDatePickers() {
         return cy.get('.react-datepicker__input-container > input')
+    }
+
+    getResult() {
+        return cy.get('.ml-3')
+    }
+
+    getResult2() {
+        return cy.get('.mt-4 > p')
     }
 
     // Methods

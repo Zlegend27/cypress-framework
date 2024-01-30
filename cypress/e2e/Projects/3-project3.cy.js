@@ -76,10 +76,15 @@ describe('login project', () => {
         booking.getBookButton().should('be.enabled')
     })
 
-    const onePassOneWay = ['One way', 'Business', 'Illinois', 'Florida', 1, 'Senior (65+)']
-    const onePassRound = ['Round trip', 'First', 'California', 'Illinois', 1, 'Adult (16-64)']
-    const twoPass = ['One way', 'Premium Economy', 'New York', 'Texas', 2, ['Adult (16-64)', 'Child (2-11)']]
-    const trips = [onePassOneWay, onePassRound, twoPass]
+    const onePassOneWay = ['One way', 'Business', 'Illinois', 'Florida', '123456789', 'Senior (65+)']
+    const onePassRound = ['Round trip', 'First', 'California', 'Illinois', '123456789', 'Adult (16-64)']
+    const trips = [onePassOneWay, onePassRound] 
+
+    // const results = ['DEPARTIL to FLTue Jan 30 2024Number of Passengers: 1Passenger 1: Senior (65+)Cabin class: Business', 'DEPARTCA to ILTue Jan 30 2024RETURNIL to CATue Jan 30 2024Number of Passengers: 1Passenger 1: Adult (16-64)Cabin class: First']
+    // const resultOnePassOneWay = ['Number of Passengers: 1', 'Passenger 1: Senior (65+)', 'Cabin class: Business']
+    // const resultOnePassRound = ['Number of Passengers: 1', 'Passenger 1: Adult (16-64)', 'Cabin class: First']
+    // const results2 = [resultOnePassOneWay, resultOnePassRound]
+
     // const trips = [this.onePassOneWay, this.onePassRound, this.twoPass]
     trips.forEach(function(trip, index){
         it(`Test Case ${index + 3}`, function() {
@@ -90,8 +95,53 @@ describe('login project', () => {
                 if(el === trip[0]){
                     cy.wrap($el).click()
                 }
+                 
             })
+            booking.getDropDown().each(function($el, index) {
+                // const el = $el.length()
+                if(index === 0) {
+                cy.wrap($el).select(trip[1])
+                }
+                else if(index === 1) {
+                    cy.wrap($el).select(trip[2])
+                }
+                else if(index === 2) {
+                    cy.wrap($el).select(trip[3])
+                }
+                else if(index === 3) {
+                   cy.wrap($el).should('have.text', trip[4])
+                }
+                else cy.wrap($el).select(trip[5])
+            })
+
+            booking.getBookButton().click()
+
+            // booking.getResult2().each(function($el, index) {
+            //     cy.wrap($el).should('have.text', results2[index[index]] )
+            // })
         })
     })
+
+    const twoPass = ['Premium Economy', 'New York', 'Texas', 1, 'Adult (16-64)', 'Child (2-11)']
+    let text = 'DEPARTNY to TXTue Jan 30 2024RETURNTX to NYTue Jan 30 2024Number of Passengers: 2Passenger 1: Adult (16-64)Passenger 2: Child (2-11)Cabin class: Premium Economy'
+
+    it('Test Case 05 - Validate the booking for 2 passengers and one way', () => {
+
+        booking.getRadioInput().last().click()
+        
+        booking.getDropDown().each(function($el, index) {
+            cy.wrap($el).select(twoPass[index])
+        })
+
+        booking.getDropDown().then(function($el) {
+            cy.wrap($el).last().select(twoPass[5])
+        })
+
+        booking.getBookButton().click()
+        booking.getResult().should('have.text', text)
+    })
 })
+
+// DEPARTIL to FLTue Jan 30 2024Number of Passengers: 1Passenger 1: Senior (65+)Cabin class: Business
+// DEPARTIL to FLTue Jan 30 2024Number of Passengers: 1Passenger 1: Senior (65+)Cabin class: Business
 

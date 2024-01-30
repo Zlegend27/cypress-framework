@@ -2,6 +2,7 @@ const { defineConfig } = require('cypress')
 require('dotenv').config()
 
 module.exports = defineConfig({
+  projectId: 'twtg9t',
 
   env: {
     SITE_URL: process.env.UI_URL,
